@@ -1,6 +1,6 @@
 {
-  "name": "@nyapals/string_library",
-  "version": "1.0.1",
+  "name": "@chudiercode/string_library",
+  "version": "1.0.0",
   "description": "FEW 2.1 ~ Assignment 1",
   "main": "index.js",
   "scripts": {
@@ -8,13 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nyapal/string_library.git"
+    "url": "git+https://github.com/chudierp/string_library.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "@chudierp",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Nyapal/string_library/issues"
+    "url": "https://github.com/chudierp/string_library/issues"
   },
-  "homepage": "https://github.com/Nyapal/string_library#readme"
+  "homepage": "https://github.com/chudierp/string_library#readme"
 }
