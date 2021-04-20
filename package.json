@@ -4,7 +4,7 @@
   "description": "FEW 2.1 ~ Assignment 1",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/chudierp/string_library/issues"
   },
-  "homepage": "https://github.com/chudierp/string_library#readme"
+  "homepage": "https://github.com/chudierp/string_library#readme",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
 }

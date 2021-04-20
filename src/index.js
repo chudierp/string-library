@@ -1,47 +1,47 @@
 // Challenge 1
 // capitalize() - makes the first character of a given string uppercase.
-String.prototype.capitalize = function() {
+function capitalize(str) {
   return this[0].toUpperCase() + this.substr(1)
 }
-let test_capitalize = "hello world" // expected "Hello world"
+const test_capitalize = "hello world" // expected "Hello world"
 // console.log(test_capitalize.capitalize()) 
 
 // Challenge 2
 // allCaps() - makes all characters uppercase. 
-String.prototype.allCaps = function() {
+function allCaps(str) {
   return this.toUpperCase()
 }
-let test_allCaps = "foo bar" // expected "FOO BAR "
+const test_allCaps = "foo bar" // expected "FOO BAR "
 // console.log(test_allCaps.allCaps()) 
 
 // Challenge 3
 // capitalizeWords() - makes the first character of each word uppercase. Imagine that each word is separated by a space.
-String.prototype.capitalizeWords = function() {
+function capitalizeWords(str) {
   let split = this.split(" ")
-  for(i = 0; i < split.length; i++) {
+  for(let i = 0; i < split.length; i++) {
     let updated = split[i].capitalize() 
     split[i] = updated
   }
   return split.join(' ')
 }
-let test_capitalizeWords = "do all the things" // expected "Do All The Things"
+const test_capitalizeWords = "do all the things" // expected "Do All The Things"
 // console.log(test_capitalizeWords.capitalizeWords())
 // ~ Advanced ~  
 
 // capitalizeHeadline() - capitalizes all of the words except the words: the, in, a, an, and, but, for, at, by, from unless one of these words is the first word of the string!
-String.prototype.capitalizeHeadline = function() {
-  offLimits = ["the", "in", "a", "an", "and", "but", "for", "at", "by", "from"]
+function capitalizeHeadline(str) {
+  const offLimits = ["the", "in", "a", "an", "and", "but", "for", "at", "by", "from"]
   let split = this.split(" ")
   split[0] = split[0].capitalize()
   for (i = 1; i < split.length; i++) {
-    if (offLimits.includes(split[i]) == false) {
+    if (offLimits.has(word)) {
       let updated = split[i].capitalize() 
       split[i] = updated
     }
   }
   return split.join(" ")
 }
-let test_capitalizeHeadline = "the most foo in bar" // expected "The Most Foo in Bar"
+const test_capitalizeHeadline = "the most foo in bar" // expected "The Most Foo in Bar"
 // console.log(test_capitalizeHeadline.capitalizeHeadline())
 
 // Challenge 4
@@ -50,12 +50,12 @@ function whitespace(char) {
   return char != "" ? true : false 
 }
 
-String.prototype.removeExtraSpaces = function() {
-  let split = this.split(" ")
-  let filtered = split.filter(whitespace)
+function removeExtraSpaces(str) {
+  const split = this.split(" ")
+ const filtered = split.filter(whitespace)
   return filtered.join(" ")
 }
-let test_removeExtraSpaces = "   Hello    world!   " // expected "Hello world!"
+const test_removeExtraSpaces = "   Hello    world!   " // expected "Hello world!"
 // console.log(test_removeExtraSpaces.removeExtraSpaces())
 // ~ Advanced ~ 
 // Remove all whitespace characters, this includes return, enter, and tabs along with spaces.
@@ -63,16 +63,16 @@ let test_removeExtraSpaces = "   Hello    world!   " // expected "Hello world!"
 
 // Challenge 5
 // kebobCase() - Removes extra spaces and replaces spaces with the hyphen "-", and makes all characters lowercase.
-String.prototype.kebobCase = function() {
+function kebobCase() {
   split = this.split(" ")
   for(i = 0; i < split.length; i++) {
-    if(split[i] == "") {
+    if(split[i] === "") {
       split.splice(i, 1) 
     }
   } 
   return split.join("-").toLowerCase()
 }
-let test_kebobCase = " Hello world " // expected "hello-world"
+const test_kebobCase = " Hello world " // expected "hello-world"
 // console.log(test_kebobCase.kebobCase())
 // ~ Advanced ~ 
 // Remove special characters from the string. For example: "Hello World!" -> "hello-world" (notice the ! is removed)
@@ -87,8 +87,8 @@ let test_kebobCase = " Hello world " // expected "hello-world"
 
 // Challenge 6
 // snakeCase() - Removes extra space and replaces spaces with an underscore "_", and makes all characters lowercase.
-String.prototype.snakeCase = function() {
-  let split = this.split(" ")
+function snakeCase(str) {
+  const split = this.split(" ")
   for(i = 0; i < split.length; i++) {
     if(split[i] === "") {
       split.splice(i, 1)
@@ -96,12 +96,12 @@ String.prototype.snakeCase = function() {
   }
   return split.join("_")
 }
-let test_snakeCase = " what the heck" // expected "what_the_heck"
+const test_snakeCase = " what the heck" // expected "what_the_heck"
 // console.log(test_snakeCase.snakeCase())
 
 // Challenge 7
 // camelCase() - Lowercases the first character of the first word. Then uppercases the first character of all other words, and removes all spaces.
-String.prototype.camelCase = function() {
+function camelCase() {
   split = this.split(" ")
   firstWord = split[0]
   lowerCaseFirstWord = firstWord[0].toLowerCase() + firstWord.substr(1)
@@ -112,14 +112,14 @@ String.prototype.camelCase = function() {
   } 
   return split.join("")
 }
-let test_camelCase = "Camel Case" // expected camelCase
+const test_camelCase = "Camel Case" // expected camelCase
 // console.log('Camel', test_camelCase.camelCase())
 
 // Challenge 8
 // shift() this method will take the first character of a string and move to the end of a string.
 // ~ Advanced ~ Include an optional second parameter that sets the number of characters to shift.
-String.prototype.shift = function(num) {
-  if(num == undefined) {
+function shift(num) {
+  if(num === undefined) {
     charToShift = this[0]
     substring = this.substring(1)
   } else {
@@ -128,13 +128,13 @@ String.prototype.shift = function(num) {
   }
   return substring + charToShift
 }
-let test_shift = "Hello World" // expected "ello WorldH"
+const test_shift = "Hello World" // expected "ello WorldH"
 // console.log(test_shift.shift())
 
 // Challenge 9
 // makeHashTag(str) - This function should convert the given string to a hash tag. A hash tag begins with # and no spaces. Each word in the phrase begins with an uppercase letter.
 // If the given string has more than three words pick the three longest and make the hash tag from those.
-String.prototype.makeHashTag = function() {
+function makeHashTag(str) {
   split = this.split(" ")
   if(split.length > 3) {
     threeLongest = split.sort(function(a, b) { return b.length - a.length }).splice(0, 3)
@@ -147,17 +147,17 @@ String.prototype.makeHashTag = function() {
   }
   return split.filter(hashtag => hashtag != "")
 }
-let test_makeHashTag = "Amazing bongo drums for sale" // expected ['#amazing', '#bongo', '#drums']
+const test_makeHashTag = "Amazing bongo drums for sale" // expected ['#amazing', '#bongo', '#drums']
 //console.log(test_makeHashTag.makeHashTag())
 
 // Challenge 10
 // isEmpty(str) - Returns true if the given string is empty or contains only whitespace. White space includes: spaces, line returns, and tabs. These characters can be represented with: \n (new line) \r (carrige return), \t (tab).
-String.prototype.isEmpty = function() {
+function isEmpty(str) {
   split = this.split(" ")
   filtered = split.filter(word => word === "")
   return split.length === filtered.length ? true : false  
 }
-let test_isEmpty = "Abc def" // expected false 
+const test_isEmpty = "Abc def" // expected false 
 //console.log(test_isEmpty.isEmpty())å
 
 module.exports = {
