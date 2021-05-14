@@ -5,7 +5,7 @@
 
 
 
-![example branch parameter](https://github.com/chudierp/string-library/actions/workflows/main.yml/badge.svg?branch=feature-1)
+![travis](https://img.shields.io/travis/chudierp/string-library)
 
 ## Capitalize
 `str.capitalize()` makes the first character of a given string uppercase.
