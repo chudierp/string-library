@@ -3,6 +3,10 @@
 ![npm](https://img.shields.io/npm/v/@nyapals/string_library)
 ![npm collaborators](https://img.shields.io/npm/collaborators/@nyapals/string_library)
 
+
+
+![example branch parameter](https://github.com/chudierp/string-library/actions/workflows/main.yml/badge.svg?branch=feature-1)
+
 ## Capitalize
 `str.capitalize()` makes the first character of a given string uppercase.
 
